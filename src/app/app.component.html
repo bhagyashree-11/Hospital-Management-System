@@ -1,0 +1,162 @@
+<div class="HospitalManagement">
+  <header>
+    <div class="logo">
+      <img src="../assets/image/xyz3 logo - Copy.png">
+    </div>
+     <div class="image"><a href="#"><img src="../assets/image/tele-medicine.png" style="width:200px;"></a></div>
+    <nav>
+      <ul class="service">
+         <li><a href="#"><i class='fa fa-ambulance' style="font-size:55px;color:#d20e0e;"></i>
+            &NonBreakingSpace;</a><div class="emr">Emergency Service <br><b style="color:#d20e0e;">9371891950 / 9123456789</b></div></li>
+      </ul> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Contact Us</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" (click)="loginopenModal(logintemplate)">Log in</a></li>
+          <li><a class="dropdown-item" href="#" (click)="registeropenModal(registertemplate)">Registration</a></li>
+        </ul>
+      </li>
+    </nav>
+  </header>
+  <div class="mid sticky-top">
+    <div class="btn-group">
+       <a routerLink="doctor"><button class="button">Doctors</button></a>
+       <a routerLink="patient"><button class="button">Patients</button></a>
+       <a routerLink="staff"><button class="button">Staff</button></a>
+       <a routerLink="billing"><button class="button">Billing</button></a>
+    </div>
+ </div> 
+
+ <div class="frontpage" >
+  <div class="description">
+    <h1>Everything you've<br>loved and more</h1>
+    <p>A hospital is a health care institution
+       providing<br> patient treatment with specialized health</p><br>
+    <a href="#">Learn More</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+ <!-- *************************************footer************************************************************* -->
+
+ <footer class="footer">
+  <div class="container">
+   <div class="row">
+     <div class="footer-col">
+       <h4>Treatments</h4>
+       <ul>
+         <li><a href="#">Anestheology</a></li>
+         <li><a href="#">Bariatric Surgery</a></li>
+         <li><a href="#">Blood Bank</a></li>
+         <li><a href="#">Cardiac Surgery</a></li>
+         <li><a href="#">Cardiology</a></li>
+         <li><a href="#">Critical Care</a></li>
+         <li><a href="#">Dermatology</a></li>
+         <li><a href="#">Dietician</a></li>
+         <li><a href="#">Endocrinology</a></li>
+         <li><a href="#">Gyanecology</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Useful Links</h4>
+       <ul>
+         <li><a href="#">Get a Second Opinion</a></li>
+         <li><a href="#">Health Checkup</a></li>
+         <li><a href="#">Bio Medical Waste</a></li>
+         <li><a href="#">News</a></li>
+         <li><a href="#">Events</a></li>
+         <li><a href="#">FAQ</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>About Us</h4>
+       <ul>
+         <li><a href="#">Tender and Notices</a></li>
+         <li><a href="#">About Us</a></li>
+         <li><a href="#">History</a></li>
+         <li><a href="#">Administration</a></li>
+         <li><a href="#">Patient & Visitors</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Follow Us</h4>
+       <div class="social-links">
+         <a href="#"><i class='fab fa-facebook'></i></a>
+         <a href="#"><i class='fab fa-google'></i> </a>
+         <a href="#"><i class='fab fa-youtube'></i></a>
+         <a href="#"><i class='fab fa-instagram'></i></a>
+         <a href="#"><i class='fab fa-twitter'></i></a>
+       </div>
+     </div>
+   </div>
+  </div>
+</footer>
+</div>
+<!-- *******************************************************LoginTemplate****************************************************** -->
+<ng-template #logintemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="loginclose()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" [(ngModel)]="loginEmail">
+    </div>
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" [(ngModel)]="loginPassword">
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember" style="margin:5px;"> Remember me
+      </label>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="loginclose1()">Reset</button>
+      <button type="submit" class="btn btn-primary" style="float:right;"(click)="login()">Submit</button>
+    </div>
+  </div>
+</ng-template>
+<!--******************************************************* registrationTemplate************************************************ -->
+<ng-template #registertemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="registerclose()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3 mt-3">
+      <label for="text">Name*</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="registerName">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="text">Email*</label>
+      <input type="text" class="form-control" id="name" placeholder="abc123@gmail.com" name="name" [(ngModel)]="registerEmail">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="text" class="form-label">Phone*</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">+91</span>
+        <input type="number" class="form-control" placeholder="1234567890" [(ngModel)]="registerPhone">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="sel1" class="form-label">Reason*</label>
+      <select class="form-select" id="sel1" name="sellist1" [(ngModel)]="registerReason">
+      <option value="" disable selected disabled>Select your reason</option>
+      <option>Appointment</option>
+      <option>Support</option>
+      <option>Emergency</option>
+    </select>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="registerclose1()">Reset</button>
+      <button type="submit" class="btn btn-primary" style="float:right;" (click)="register()">submit</button>
+    </div>
+  </div>
+</ng-template>

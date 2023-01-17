@@ -1,0 +1,97 @@
+<div class="heading2">
+    <h2>Patients</h2>
+    <button class="btn btn-muted" (click)="patientopenModal(patientstemplate, 'null')">Add More  
+    </button>
+  </div><br>
+  
+  
+   <div class="Tables">
+     <table class="table table-sm text-center">
+       <thead>
+         <tr>
+           <th>Sr No.</th>        
+           <th>Name</th>
+           <th>Age</th>
+           <th>Diagnosis</th>
+           <th>Doctor</th>
+           <th>Action</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let patient of PatientData;let i = index">
+           <td>{{i+1}}</td>
+           <td>{{patient.Name}}</td>
+           <td>{{patient.Age}}</td>
+           <td>{{patient.Diagnosis}}</td>
+           <td>{{patient.Doctor}}</td>
+           <td>
+             <i class='fas fa-edit' style="font-size:20px" (click)="patientopenModal(editpatientstemplate,i)"></i>
+             &NonBreakingSpace;
+             <i class="fa fa-trash-alt" style="font-size:18px" (click)="patientdelete(i)"></i>
+          </td>
+         </tr>
+       </tbody>
+     </table>
+   </div><br><br> 
+   <!--********************************************** PatientData*************************************************** -->
+   <ng-template #patientstemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="patientclose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3 mt-3">
+        <label for="text">Name*</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="patientName">
+      </div>
+      <div class="mb-3">
+        <label for="Email">Age*</label>
+        <input type="number" class="form-control" id="email" placeholder="Enter Age" name="Email" [(ngModel)]="patientAge">
+      </div>
+      <div class="mb-3">
+        <label for="Email">Diagnosis*</label>
+        <input type="text" class="form-control" id="email" placeholder="Diagnosis" name="Email" [(ngModel)]="patientDiagnosis">
+      </div>
+      <div class="mb-3">
+        <label for="pwd">Doctor*</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Doctor" name="pswd" [(ngModel)]="patientDoctor">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="patientclose1()">Reset</button>
+        <button type="submit" class="btn btn-primary" style="float:right;" (click)="patientsubmit()">Submit</button>
+      </div>
+    </div>
+  </ng-template>
+  <!-- ****************************************************editPatientData********************************************************** -->
+  <ng-template #editpatientstemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="patientclose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3 mt-3">
+        <label for="text">Name*</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="patientName">
+      </div>
+      <div class="mb-3">
+        <label for="Email">Age*</label>
+        <input type="number" class="form-control" id="email" placeholder="Enter Age" name="Email" [(ngModel)]="patientAge">
+      </div>
+      <div class="mb-3">
+        <label for="Email">Diagnosis*</label>
+        <input type="text" class="form-control" id="email" placeholder="Diagnosis" name="Email" [(ngModel)]="patientDiagnosis">
+      </div>
+      <div class="mb-3">
+        <label for="pwd">Doctor*</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Doctor" name="pswd" [(ngModel)]="patientDoctor">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="patientclose1()">Reset</button>
+        <button type="submit" class="btn btn-primary" style="float:right;" (click)="patientupdate()">update</button>
+      </div>
+    </div>
+  </ng-template>

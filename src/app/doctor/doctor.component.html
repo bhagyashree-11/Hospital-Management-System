@@ -1,0 +1,107 @@
+ <!--***************************************** DoctorsList *****************************************************-->
+
+
+
+ <div class="heading">
+    <h2>Doctors</h2>
+    <button class="btn btn-muted" (click)="doctoropenModal(doctortemplate, 'null')">Add More 
+    </button>
+  </div><br>
+  
+  
+   <div class="Tables">
+     <table class="table table-sm text-center">
+       <thead>
+         <tr>
+           <th>Sr No.</th>        
+           <th>Name</th>
+           <th>Expertise</th>
+           <th>Mobile</th>
+           <th>Experience</th>
+           <th>Action</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let doctor of DoctorsData;let i = index">
+           <td>{{i+1}}</td>
+           <td>{{doctor.Name}}</td>
+           <td>{{doctor.Expertise}}</td>
+           <td>{{doctor.Mobile}}</td>
+           <td>{{doctor.Experience}}</td>
+           <td>
+             <i class='fas fa-edit' style="font-size:20px" (click)="doctoropenModal(editdoctortemplate, i)" ></i>
+             &NonBreakingSpace;
+             <i class="fa fa-trash-alt" style="font-size:18px" (click)="delete(i)"></i>
+          </td>
+         </tr>
+       </tbody>
+     </table>
+   </div><br><br> 
+<!-- *******************************************************DoctorsData******************************************************** -->
+<ng-template #doctortemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="customerclose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3 mt-3">
+        <label for="text">Name*</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="doctorName">
+      </div>
+      <div class="mb-3">
+        <label for="Email">Expertise*</label>
+        <input type="text" class="form-control" id="email" placeholder="Expertise" name="Email" [(ngModel)]="doctorExpertise">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="text" class="form-label">Mobile*</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">+91</span>
+          <input type="number" class="form-control" placeholder="1234567890" [(ngModel)]="doctorMobile">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="pwd">Experience*</label>
+        <input type="number" class="form-control" id="pwd" placeholder="Experience" name="pswd" [(ngModel)]="doctorExperience">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="customerclose1()">Reset</button>
+        <button type="submit" class="btn btn-primary" style="float:right;" (click)="doctorsubmit()">Submit</button>
+      </div>
+    </div>
+  </ng-template>
+  <!--**************** EditDoctorsData********************** -->
+  <ng-template #editdoctortemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="customerclose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3 mt-3">
+        <label for="text">Name*</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="doctorName">
+      </div>
+      <div class="mb-3">
+        <label for="Email">Expertise*</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter Email" name="Email" [(ngModel)]="doctorExpertise">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="text" class="form-label">Mobile*</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">+91</span>
+          <input type="number" class="form-control" placeholder="1234567890" [(ngModel)]="doctorMobile">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="pwd">Experience*</label>
+        <input type="number" class="form-control" id="pwd" placeholder="Experience" name="pswd" [(ngModel)]="doctorExperience">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="customerclose1()">Reset</button>
+        <button type="submit" class="btn btn-primary" style="float:right;" (click)="doctorupdate()">update</button>
+      </div>
+    </div>
+  </ng-template>

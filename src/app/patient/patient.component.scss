@@ -1,0 +1,76 @@
+//modal
+.modal-header {
+    padding: 10px;
+  }
+  .modal-header button{
+    margin-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .modal-body{
+   padding: 12px;
+  }
+  .modal-body input{
+   padding: 5px;
+   //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .modal-body select{
+   padding: 5px;
+   //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .modal-body button{
+   padding: 5px 10px;
+  }
+  .modal-body label{
+   font-weight: bold;
+  }
+  
+  .modal-body span{
+   padding: 0px 12px;
+  }
+  .modal-footer{
+   padding: 10px;
+  }
+  .modal-footer button{
+   padding: 5px 10px;
+   margin-right: 5px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+//tables
+.table{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    //box-shadow: 0px 20px 20px #ABB2B9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px 8px 6px 6px;
+    overflow: hidden;
+}
+.table thead tr{
+    color: black;
+    font-size: 19px;
+    //background-image: linear-gradient(#00A4EF, #000081);
+}
+.table tbody{
+    font-size: 17px;
+}
+//heading
+.heading2{
+    display: flex;
+}
+.heading2 button{
+    margin-left: 1132px;
+    padding:5px 15px;
+    border: 1px solid black;
+    font-size:20px;
+    font-weight:bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+.heading2 h2{
+    font-size: 30px;
+    color: #df0e0eea;
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: underline;
+}

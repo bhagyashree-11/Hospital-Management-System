@@ -1,0 +1,100 @@
+<div class="heading3">
+    <h2>Staff</h2>
+    <button class="btn btn-muted" (click)="staffopenModal(stafftemplate,'null')">Add More 
+    </button>
+  </div><br>
+ 
+ 
+  <div class="Tables">
+    <table class="table table-sm text-center">
+      <thead>
+        <tr>
+          <th>Sr No.</th>        
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Department</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let staff of staffData;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{staff.Name}}</td>
+          <td>{{staff.Designation}}</td>
+          <td>{{staff.Department}}</td>
+          <td>
+            <i class='fas fa-edit' style="font-size:20px" (click)="staffopenModal(editstafftemplate, i)"></i>
+            &NonBreakingSpace;
+            <i class="fa fa-trash-alt" style="font-size:18px" (click)="staffdelete(i)"></i>
+         </td>
+        </tr>
+      </tbody>
+    </table>
+  </div><br><br> 
+<!-- ************************************************StaffData***************************************************************** -->
+<ng-template #stafftemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Edit Staff Data</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="staffclose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3 mt-3">
+        <label for="text">Name*</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="staffName">
+      </div>
+      <div class="mb-3">
+        <label for="sel1" class="form-label">Designation*</label>
+        <select class="form-select" id="sel1" name="sellist1" [(ngModel)]="staffDesignation">
+        <option value="" disable selected disabled>Designation</option>
+        <option>Medical Superintendent</option>
+        <option>Medical Officer</option>
+        <option>Nursing Superintendent</option>
+        <option>Pharmacy staff</option>
+      </select>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="text">Department*</label>
+        <input type="text" class="form-control" id="name" placeholder="Department" name="name" [(ngModel)]="staffDepartment">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="staffclose1()">Reset</button>
+        <button type="submit" class="btn btn-primary" style="float:right;" (click)="staffsubmit()">submit</button>
+      </div>
+    </div>
+  </ng-template>
+  <!-- *****************************************************editstaffData******************************************* -->
+  <ng-template #editstafftemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Staff Data</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="staffclose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3 mt-3">
+        <label for="text">Name*</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="staffName">
+      </div>
+      <div class="mb-3">
+        <label for="sel1" class="form-label">Designation*</label>
+        <select class="form-select" id="sel1" name="sellist1" [(ngModel)]="staffDesignation">
+        <option value="" disable selected disabled>Designation</option>
+        <option>Medical Superintendent</option>
+        <option>Medical Officer</option>
+        <option>Nursing Superintendent</option>
+        <option>Pharmacy staff</option>
+      </select>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="text">Department*</label>
+        <input type="text" class="form-control" id="name" placeholder="Department" name="name" [(ngModel)]="staffDepartment">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="staffclose1()">Reset</button>
+        <button type="submit" class="btn btn-primary" style="float:right;" (click)="staffupdate()">update</button>
+      </div>
+    </div>
+  </ng-template>
+  
